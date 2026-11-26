@@ -116,15 +116,3 @@ structured-doc-extractor/
 MIT License.
 
 
----
-
-### 2. Crea `.dockerignore` y haz tu primer `git commit`
-
-Ejecuta estos comandos en la terminal integrada de VS Code para evitar que Docker copie `.venv/` en futuros *builds* y registrar tu versión v1.0 en Git:
-
-```bash
-printf ".venv\n__pycache__\n.pytest_cache\n.git\noutput/*\n!output/.gitkeep\n" > .dockerignore
-rmdir src/tests 2>/dev/null || true
-git add .
-git commit -m "feat: complete deterministic and LLM-assisted structured PDF extractor"
-git status
