@@ -1,0 +1,13 @@
+services:
+  extractor:
+    build: .
+    environment:
+      - LLM_BASE_URL=http://host.docker.internal:11434/v1
+      - LLM_API_KEY=ollama
+      - LLM_MODEL=qwen2.5-coder:7b
+      - OFFLINE_MODE=false
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
